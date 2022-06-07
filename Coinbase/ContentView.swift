@@ -13,33 +13,28 @@ struct ContentView: View {
     private var viewModel = CoinbaseAccountViewmodel()
     
     var body: some View {
-        NavigationView {
-//            ZStack {
-//               // Color.Background.edgesIgnoringSafeArea(.all)//
-//                
-//                ScrollView {
-//                    LazyVStack {
-//                        ForEach(viewModel.accounts, id: \.id) { account in
-//                        
-//                                        NavigationLink {
-//                                            Text("Item at \(account.balance.amount)")
-//                                        } label: {
-//                                            Text(account.name)
-//                                        }
-//                                    }
-//                                }
-//                }
-//            }
-//            .navigationBarTitleDisplayMode(.inline)
-//            .toolbar {
-//                ToolbarItem(placement: .principal) {
-//                    VStack {
-//                        Text(LocalizedStringKey("toolbar_Accounts"))
-//                    }
-//                }
-//            }.onAppear(perform: {
-//                viewModel.loadUserCoinbaseAccounts()
-//            })
+        
+        HStack {
+           // Color.Background.edgesIgnoringSafeArea(.all)//
+            let dashAccount = viewModel.dashAccount?.currency.name ?? ""
+            Text(dashAccount)
+                .font(.title)
+                .foregroundColor(.blue)
+            
+            let dashBalance = viewModel.dashAccount?.balance.amount ?? ""
+            Text(dashBalance)
+            
+        }
+        .onAppear(perform: {
+            viewModel.loadUserCoinbaseAccounts()
+        })
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                VStack {
+                    Text(LocalizedStringKey("Coinbase"))
+                }
+            }
         }
     }
     

@@ -15,12 +15,14 @@ class CoinbaseAccountViewmodel: ObservableObject {
     @Published
     var accounts: [CoinbaseUserAccountData] = []
     private var cancelables = [AnyCancellable]()
+    @Published
+    var dashAccount: CoinbaseUserAccountData?
     
     func loadUserCoinbaseAccounts() {
         getUserCoinbaseAccounts.invoke()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { _ in }, receiveValue: { [weak self] response in
-                self?.accounts = response.data
+                self?.dashAccount = response
             })
             .store(in: &cancelables)
     }

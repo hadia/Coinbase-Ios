@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-private let ACCESS_TOKEN = "4df59b9b3cf641813894da7b830a562a8d4438e4a262749e2f6421f78963ec31"
+private let ACCESS_TOKEN = "3108fce340786e6402672c80d687695989dafd172731b4547527a9d5c39d9731"
 /// Provides access to the REST Backend
 protocol RestClient {
     /// Retrieves a JSON resource and decodes it
