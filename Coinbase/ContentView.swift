@@ -9,112 +9,81 @@ import SwiftUI
 
 
 struct ContentView: View {
+    
     @StateObject
     private var viewModel = CoinbaseAccountViewmodel()
     
     var body: some View {
-        
-        HStack {
-           // Color.Background.edgesIgnoringSafeArea(.all)//
-            let dashAccount = viewModel.dashAccount?.currency.name ?? ""
-            Text(dashAccount)
-                .font(.title)
-                .foregroundColor(.blue)
-            
-            let dashBalance = viewModel.dashAccount?.balance.amount ?? ""
-            Text(dashBalance)
-            
-        }
-        .onAppear(perform: {
-            viewModel.loadUserCoinbaseAccounts()
-        })
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .principal) {
+        NavigationView {
+            ZStack  {
+                Color.white
+                    .ignoresSafeArea()
+                
+                // NavigationView Background
                 VStack {
-                    Text(LocalizedStringKey("Coinbase"))
+                    Color.screenBackgroundColor
+                    Spacer()
+                }
+                
+                VStack(alignment: .center ) {
+                    
+                    
+                    let dashBalance = viewModel.dashAccount?.balance.amount ?? ""
+                    Text("Dash balance on Coinbase")
+                        .padding(.top, 20)
+                        .font(Font.custom("MontserratRegular", size: 12))
+                    HStack{
+                        Image("dashCurrency").padding(14)
+                    Text(dashBalance)
+                        .padding(.vertical, 5)
+                        .font(Font.custom("MontserratMedium", size: 28))
+                        
+                    }
+                    
+                    
+                    VStack(alignment: .center, spacing: 0){
+                        CoinbaseServiceItem(imageName: "buyCoinbase",title: "Buy Dash",subTitle: "Receive directly into Dash Wallet.",showDivider: true)
+                        CoinbaseServiceItem(imageName: "sellDash",title: "Sell Dash",subTitle: "Receive directly into Coinbase.",showDivider: true)
+                        CoinbaseServiceItem(imageName: "convertCrypto",title: "Convert Crypto",subTitle: "Between Dash Wallet and Coinbase.",showDivider: true)
+                        CoinbaseServiceItem(imageName: "transferCoinbase",title: "Transfer Dash",subTitle: "Between Dash Wallet and Coinbase.")
+                    }
+                    .padding(.vertical, 5)
+                    .background(.white)
+                    .cornerRadius(10)
+                    
+                }  .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .top)
+                    .padding(.horizontal, 15)
+                    
+                   
+               
+            }.onAppear(perform: {
+                viewModel.signInTapped()
+            })
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    HStack(alignment: .center ) {
+                        Image( "Coinbase")
+                        
+                        VStack(spacing: 0 ) {
+                            Text(LocalizedStringKey("Coinbase")).font(Font.custom("MontserratSemiBold", size: 16))
+                            
+                            HStack(spacing:4) {
+                                Image("Connected")
+                                Text("Connected").font(Font.custom("MontserratRegular", size: 10))
+                            }
+                            
+                        }
+                    }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
                 }
             }
         }
     }
-    
-    
-  
-    
-//    @Environment(\.managedObjectContext) private var viewContext
-//
-//    @FetchRequest(
-//        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-//        animation: .default)
-//    private var items: FetchedResults<Item>
-//
-//    var body: some View {
-//        NavigationView {
-//            List {
-//                ForEach(viewModel.accounts) { item in
-//                    NavigationLink {
-//                        Text("Item at \(item.!, formatter: itemFormatter)")
-//                    } label: {
-//                        Text(item.timestamp!, formatter: itemFormatter)
-//                    }
-//                }
-//                .onDelete(perform: deleteItems)
-//            }
-//            .toolbar {
-//                ToolbarItem(placement: .navigationBarTrailing) {
-//                    EditButton()
-//                }
-//                ToolbarItem {
-//                    Button(action: addItem) {
-//                        Label("Add Item", systemImage: "plus")
-//                    }
-//                }
-//            }
-//            Text("Select an item")
-//        }
-//    }
-//
-//    private func addItem() {
-//        withAnimation {
-//            let newItem = Item(context: viewContext)
-//            newItem.timestamp = Date()
-//
-//            do {
-//                try viewContext.save()
-//            } catch {
-//                // Replace this implementation with code to handle the error appropriately.
-//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//                let nsError = error as NSError
-//                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-//            }
-//        }
-//    }
-//
-//    private func deleteItems(offsets: IndexSet) {
-//        withAnimation {
-//            offsets.map { items[$0] }.forEach(viewContext.delete)
-//
-//            do {
-//                try viewContext.save()
-//            } catch {
-//                // Replace this implementation with code to handle the error appropriately.
-//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//                let nsError = error as NSError
-//                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-//            }
-//        }
-//    }
-//}
-//
-//private let itemFormatter: DateFormatter = {
-//    let formatter = DateFormatter()
-//    formatter.dateStyle = .short
-//    formatter.timeStyle = .medium
-//    return formatter
-//}()
-//
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-//    }
+}
+
+
+struct Previews_ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }

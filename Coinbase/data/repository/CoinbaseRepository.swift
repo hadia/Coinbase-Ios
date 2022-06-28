@@ -15,5 +15,10 @@ class CoinbaseRepository {
     func getUserCoinbaseAccounts(limit: Int) -> AnyPublisher<CoinbaseUserAccountsResponse, Error> {
         remoteService.getUserCoinbaseAccounts(limit: limit)
     }
+    
+    func getToken(code: String) -> AnyPublisher<CoinbaseToken, Error> {
+        remoteService.getToken(code: code)
+    }
+
 }
 

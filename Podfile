@@ -8,6 +8,5 @@ target 'Coinbase' do
   # Pods for Coinbase.iOS
   pod "Resolver"
   pod 'SwiftLint'
-
 end
 

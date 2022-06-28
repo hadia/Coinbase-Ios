@@ -32,6 +32,7 @@ extension Resolver: ResolverRegistering {
     
     private static func registerDomain() {
         register { GetUserCoinbaseAccounts() }
+        register { GetUserCoinbaseToken() }
 //        register { GetCharacterDetail() }
 //        register { GetFavorites() }
 //        register { UpdateFavorite() }

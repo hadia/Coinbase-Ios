@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-@available(iOS 14.0, *)
+
 @main
 struct CoinbaseApp: App {
     let persistenceController = PersistenceController.shared

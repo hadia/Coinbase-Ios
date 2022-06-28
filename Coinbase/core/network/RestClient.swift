@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-private let ACCESS_TOKEN = "3108fce340786e6402672c80d687695989dafd172731b4547527a9d5c39d9731"
+private var ACCESS_TOKEN :String? = nil
 /// Provides access to the REST Backend
 protocol RestClient {
     /// Retrieves a JSON resource and decodes it
@@ -17,9 +17,14 @@ protocol RestClient {
     /// Creates some resource by sending a JSON body and returning empty response
     func post<T: Decodable, S: Encodable, E: Endpoint>(_ endpoint: E, using body: S?,using api2FATokenVersion:String?)
     -> AnyPublisher<T, Error>
+    
+    /// Creates some resource by sending a JSON body and returning empty response
+    func post<T: Decodable, E: Endpoint>(_ endpoint: E, using queryItems: [URLQueryItem]?)
+    -> AnyPublisher<T, Error>
 }
 
 class RestClientImpl: RestClient {
+
     
     private let session: URLSession
     
@@ -38,27 +43,27 @@ class RestClientImpl: RestClient {
     {
         startRequest(for: endpoint, method: "POST", jsonBody: body)
             .tryMap { try $0.parseJson() }
-//            .catch { error -> AnyPublisher<T, Error> in
-//                switch error {
-//                case RestClientErrors.noDataReceived:
-//                    // API's Post request doesn't return data back even with code 200
-//                    return Just(()).setFailureType(to: Error.self).eraseToAnyPublisher()
-//                default:
-//                    return Fail<Void, Error>(error: error).eraseToAnyPublisher()
-//                }
-//            }
             .eraseToAnyPublisher()
     }
+    
+    func post<T, E>(_ endpoint: E, using queryItems: [URLQueryItem]?) -> AnyPublisher<T, Error> where T : Decodable, E : Endpoint {
+        startRequest(for: endpoint, method: "POST", jsonBody: nil as String?, queryItems: queryItems)
+            .tryMap { try $0.parseJson() }
+            .eraseToAnyPublisher()
+    }
+    
     
     private func startRequest<T: Encodable, S: Endpoint>(for endpoint: S,
                                                          method: String,
                                                          jsonBody: T? = nil,
+                                                        queryItems: [URLQueryItem]? = nil,
                                                          api2FATokenVersion:String?=nil)
     -> AnyPublisher<InterimRestResponse, Error> {
         var request: URLRequest
         
         do {
-            request = try buildRequest(endpoint: endpoint, method: method, jsonBody: jsonBody ,api2FATokenVersion: api2FATokenVersion)
+            request = try buildRequest(endpoint: endpoint, method: method, jsonBody: jsonBody,
+                                       queryItems:queryItems,api2FATokenVersion: api2FATokenVersion)
         } catch {
             print("Failed to create request: \(String(describing: error))")
             return Fail(error: error).eraseToAnyPublisher()
@@ -86,13 +91,24 @@ class RestClientImpl: RestClient {
     private func buildRequest<T: Encodable, S: Endpoint>(endpoint: S,
                                                          method: String,
                                                          jsonBody: T?,
+                                                         queryItems: [URLQueryItem]? = nil,
                                                          api2FATokenVersion:String?=nil) throws -> URLRequest {
         var request = URLRequest(url: endpoint.url, timeoutInterval: 10)
-        request.httpMethod = method
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("Bearer \(ACCESS_TOKEN)", forHTTPHeaderField: "Authorization")
-        request.setValue("2021-09-07", forHTTPHeaderField: "CB-VERSION")
         
+        if let queryItems = queryItems {
+            var urlComponents = URLComponents(string:  endpoint.url.absoluteString)
+            urlComponents?.queryItems = queryItems
+            
+            request = URLRequest(url: urlComponents?.url ?? endpoint.url  , timeoutInterval: 10)
+        }
+      
+        
+        request.httpMethod = method
+        if let apiAccessToken = NetworkRequest.accessToken{
+         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+         request.setValue("Bearer \(apiAccessToken)", forHTTPHeaderField: "Authorization")
+         request.setValue("2021-09-07", forHTTPHeaderField: "CB-VERSION")
+        }
         if let api2FAToken = api2FATokenVersion  {
             request.setValue(api2FAToken, forHTTPHeaderField: "CB-2FA-TOKEN")
         }
@@ -105,6 +121,7 @@ class RestClientImpl: RestClient {
                 throw RestClientErrors.jsonDecode(error: error)
             }
         }
+        
         return request
     }
     
