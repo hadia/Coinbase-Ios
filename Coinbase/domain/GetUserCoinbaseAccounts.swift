@@ -17,6 +17,7 @@ class GetUserCoinbaseAccounts{
         coinbaseRepository.getUserCoinbaseAccounts(limit: limit)
             .map { (response: CoinbaseUserAccountsResponse) in
                 let account = response.data.first(where: {$0.currency.name == "Dash"})
+                
                 return account
         }
             .eraseToAnyPublisher()

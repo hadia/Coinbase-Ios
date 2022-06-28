@@ -21,12 +21,28 @@ protocol CoinbaseService {
     func swapTradeCoinbase(request:CoinbaseSwapeTradeRequest) -> AnyPublisher<CoinbasePaymentMethodsResponse, Error>
     func swapTradeCommitCoinbase(tradeId:String) -> AnyPublisher<CoinbasePaymentMethodsResponse, Error>
     func getCoinbaseAccountAddress(accountId:String) -> AnyPublisher<CoinbasePaymentMethodsResponse, Error>
-    func createCoinbaseAccountAddress(accountId:String,request:CoinbaseCreateAddressesRequest) -> AnyPublisher<CoinbasePaymentMethodsResponse, Error>
+    func getToken(code:String) -> AnyPublisher<CoinbaseToken, Error>
+
+   // func revokeToken() -> AnyPublisher<String, Error>
 }
 
 
 class CoinbaseServiceImpl: CoinbaseService {
+  
+    
+  
    @Injected private var restClient: RestClient
+    
+    func getToken(code: String) -> AnyPublisher<CoinbaseToken, Error> {
+        restClient.post(APIEndpoint.getToken, using:[
+            URLQueryItem(name: "client_id", value: NetworkRequest.clientID),
+            URLQueryItem(name: "client_secret", value: NetworkRequest.clientSecret),
+            URLQueryItem(name: "grant_type", value: NetworkRequest.grant_type),
+            URLQueryItem(name: "redirect_uri", value: NetworkRequest.redirect_uri),
+            URLQueryItem(name: "code", value: code)
+          ])
+    }
+    
     
     func getUserCoinbaseAccounts(limit: Int) -> AnyPublisher<CoinbaseUserAccountsResponse, Error> {
         restClient.get(APIEndpoint.userAccounts(limit))

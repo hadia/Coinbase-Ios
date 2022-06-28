@@ -24,6 +24,12 @@
 		0F8DEEBA283D177500887509 /* CoinbaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8DEEB9283D177500887509 /* CoinbaseUITests.swift */; };
 		0F8DEEBC283D177500887509 /* CoinbaseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8DEEBB283D177500887509 /* CoinbaseUITestsLaunchTests.swift */; };
 		0F8DEECC283D267700887509 /* CoinbaseUserAccountsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8DEECB283D267600887509 /* CoinbaseUserAccountsResponse.swift */; };
+		0F92DB052861CC71003B10A0 /* fontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F92DB042861CC71003B10A0 /* fontStyle.swift */; };
+		0F92DB082861CDBF003B10A0 /* MontserratRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F92DB062861CDBF003B10A0 /* MontserratRegular.ttf */; };
+		0F92DB092861CDBF003B10A0 /* MontserratSemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F92DB072861CDBF003B10A0 /* MontserratSemiBold.ttf */; };
+		0F92DB0B2861D2C8003B10A0 /* NavigationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F92DB0A2861D2C8003B10A0 /* NavigationConfigurator.swift */; };
+		0F92DB0D2861F15D003B10A0 /* CoinbaseServiceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F92DB0C2861F15D003B10A0 /* CoinbaseServiceItem.swift */; };
+		0F92DB0F2862029B003B10A0 /* MontserratMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F92DB0E2862029B003B10A0 /* MontserratMedium.ttf */; };
 		0FC512D028464073008F01A3 /* CoinbaseAccountViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC512CF28464073008F01A3 /* CoinbaseAccountViewmodel.swift */; };
 		0FC512D22846A5A8008F01A3 /* CoinbaseUserAuthInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC512D12846A5A8008F01A3 /* CoinbaseUserAuthInformation.swift */; };
 		0FC512D42846A643008F01A3 /* CoinbaseExchangeRateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC512D32846A643008F01A3 /* CoinbaseExchangeRateResponse.swift */; };
@@ -42,6 +48,9 @@
 		0FD67D772841C515003F89B1 /* CoinbaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD67D762841C515003F89B1 /* CoinbaseRepository.swift */; };
 		0FD67D7A2841C5DC003F89B1 /* AppModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD67D792841C5DC003F89B1 /* AppModule.swift */; };
 		0FD67D7D2841C665003F89B1 /* GetUserCoinbaseAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD67D7C2841C665003F89B1 /* GetUserCoinbaseAccounts.swift */; };
+		0FF10A482860C1020077563D /* CoinbaseToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF10A472860C1020077563D /* CoinbaseToken.swift */; };
+		0FF10A4A2860C60C0077563D /* TokenNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF10A492860C60C0077563D /* TokenNetworkRequest.swift */; };
+		0FF10A4C2860DCA40077563D /* GetUserCoinbaseToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF10A4B2860DCA40077563D /* GetUserCoinbaseToken.swift */; };
 		45EB3B0BB95F817E783D68D5 /* Pods_Coinbase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC4AE09CEDAD7863D62CE587 /* Pods_Coinbase.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +92,12 @@
 		0F8DEEB9283D177500887509 /* CoinbaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseUITests.swift; sourceTree = "<group>"; };
 		0F8DEEBB283D177500887509 /* CoinbaseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0F8DEECB283D267600887509 /* CoinbaseUserAccountsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseUserAccountsResponse.swift; sourceTree = "<group>"; };
+		0F92DB042861CC71003B10A0 /* fontStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fontStyle.swift; sourceTree = "<group>"; };
+		0F92DB062861CDBF003B10A0 /* MontserratRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MontserratRegular.ttf; sourceTree = "<group>"; };
+		0F92DB072861CDBF003B10A0 /* MontserratSemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MontserratSemiBold.ttf; sourceTree = "<group>"; };
+		0F92DB0A2861D2C8003B10A0 /* NavigationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationConfigurator.swift; sourceTree = "<group>"; };
+		0F92DB0C2861F15D003B10A0 /* CoinbaseServiceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseServiceItem.swift; sourceTree = "<group>"; };
+		0F92DB0E2862029B003B10A0 /* MontserratMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MontserratMedium.ttf; sourceTree = "<group>"; };
 		0FC512CF28464073008F01A3 /* CoinbaseAccountViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseAccountViewmodel.swift; sourceTree = "<group>"; };
 		0FC512D12846A5A8008F01A3 /* CoinbaseUserAuthInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseUserAuthInformation.swift; sourceTree = "<group>"; };
 		0FC512D32846A643008F01A3 /* CoinbaseExchangeRateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseExchangeRateResponse.swift; sourceTree = "<group>"; };
@@ -102,6 +117,9 @@
 		0FD67D792841C5DC003F89B1 /* AppModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModule.swift; sourceTree = "<group>"; };
 		0FD67D7C2841C665003F89B1 /* GetUserCoinbaseAccounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserCoinbaseAccounts.swift; sourceTree = "<group>"; };
 		47E71F72286AE0F600CDF2BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0FF10A472860C1020077563D /* CoinbaseToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseToken.swift; sourceTree = "<group>"; };
+		0FF10A492860C60C0077563D /* TokenNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenNetworkRequest.swift; sourceTree = "<group>"; };
+		0FF10A4B2860DCA40077563D /* GetUserCoinbaseToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserCoinbaseToken.swift; sourceTree = "<group>"; };
 		ACC87752FDB7DB941D01224F /* Pods-Coinbase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coinbase.release.xcconfig"; path = "Target Support Files/Pods-Coinbase/Pods-Coinbase.release.xcconfig"; sourceTree = "<group>"; };
 		B8909FB672037DEDE2913F50 /* Pods-Coinbase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coinbase.debug.xcconfig"; path = "Target Support Files/Pods-Coinbase/Pods-Coinbase.debug.xcconfig"; sourceTree = "<group>"; };
 		FC4AE09CEDAD7863D62CE587 /* Pods_Coinbase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Coinbase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,6 +197,9 @@
 			isa = PBXGroup;
 			children = (
 				47E71F72286AE0F600CDF2BD /* Info.plist */,
+				0F92DB0E2862029B003B10A0 /* MontserratMedium.ttf */,
+				0F92DB062861CDBF003B10A0 /* MontserratRegular.ttf */,
+				0F92DB072861CDBF003B10A0 /* MontserratSemiBold.ttf */,
 				0FD67D7B2841C641003F89B1 /* domain */,
 				0FD67D782841C5C7003F89B1 /* di */,
 				0FD67D672841BF46003F89B1 /* core */,
@@ -186,10 +207,13 @@
 				0F8DEEC8283D17E400887509 /* viewModels */,
 				0F8DEE99283D177200887509 /* CoinbaseApp.swift */,
 				0F8DEE9B283D177200887509 /* ContentView.swift */,
+				0F92DB042861CC71003B10A0 /* fontStyle.swift */,
 				0F8DEE9D283D177400887509 /* Assets.xcassets */,
 				0F8DEEA2283D177400887509 /* Persistence.swift */,
 				0F8DEEA4283D177400887509 /* Coinbase.xcdatamodeld */,
 				0F8DEE9F283D177400887509 /* Preview Content */,
+				0F92DB0A2861D2C8003B10A0 /* NavigationConfigurator.swift */,
+				0F92DB0C2861F15D003B10A0 /* CoinbaseServiceItem.swift */,
 			);
 			path = Coinbase;
 			sourceTree = "<group>";
@@ -231,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				0FD67D622841BE51003F89B1 /* remote */,
+				0FF10A492860C60C0077563D /* TokenNetworkRequest.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -284,6 +309,7 @@
 				0FC512D12846A5A8008F01A3 /* CoinbaseUserAuthInformation.swift */,
 				0F8DEECB283D267600887509 /* CoinbaseUserAccountsResponse.swift */,
 				0FD67D5F2841BCD1003F89B1 /* base */,
+				0FF10A472860C1020077563D /* CoinbaseToken.swift */,
 			);
 			path = remote;
 			sourceTree = "<group>";
@@ -344,6 +370,7 @@
 			isa = PBXGroup;
 			children = (
 				0FD67D7C2841C665003F89B1 /* GetUserCoinbaseAccounts.swift */,
+				0FF10A4B2860DCA40077563D /* GetUserCoinbaseToken.swift */,
 			);
 			path = domain;
 			sourceTree = "<group>";
@@ -463,8 +490,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F92DB082861CDBF003B10A0 /* MontserratRegular.ttf in Resources */,
+				0F92DB0F2862029B003B10A0 /* MontserratMedium.ttf in Resources */,
 				0F8DEEA1283D177400887509 /* Preview Assets.xcassets in Resources */,
 				0F8DEE9E283D177400887509 /* Assets.xcassets in Resources */,
+				0F92DB092861CDBF003B10A0 /* MontserratSemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,14 +565,17 @@
 				0FC512D42846A643008F01A3 /* CoinbaseExchangeRateResponse.swift in Sources */,
 				0F64E6A22848F14A0094E571 /* AddressInfo.swift in Sources */,
 				0F64E69D2847687B0094E571 /* CoinbaseSwapeTradeResponse.swift in Sources */,
+				0F92DB0D2861F15D003B10A0 /* CoinbaseServiceItem.swift in Sources */,
 				0FC512E22846AF8C008F01A3 /* CoinbaseAmount.swift in Sources */,
 				0FC512DB2846AC7A008F01A3 /* CoinbasePlaceBuyOrderResponse.swift in Sources */,
 				0FD67D6D2841C04A003F89B1 /* CoinbaseService.swift in Sources */,
 				0F8DEECC283D267700887509 /* CoinbaseUserAccountsResponse.swift in Sources */,
+				0FF10A4A2860C60C0077563D /* TokenNetworkRequest.swift in Sources */,
 				0FC512DE2846ADEE008F01A3 /* CoinbaseTransactionsRequest.swift in Sources */,
 				0FD67D662841BEDC003F89B1 /* CoinbaseAPIEndpoint.swift in Sources */,
 				0FD67D6A2841BF62003F89B1 /* Endpoint.swift in Sources */,
 				0F64E69A2847652B0094E571 /* CoinbaseSwapeTradeRequest.swift in Sources */,
+				0FF10A482860C1020077563D /* CoinbaseToken.swift in Sources */,
 				0F64E6A62848F4120094E571 /* CoinbaseCreateAddressesRequest.swift in Sources */,
 				0F8DEEA3283D177400887509 /* Persistence.swift in Sources */,
 				0FC512E02846AE2F008F01A3 /* CoinbaseTransactionResponse.swift in Sources */,
@@ -551,8 +584,10 @@
 				0F8DEEA6283D177400887509 /* Coinbase.xcdatamodeld in Sources */,
 				0F64E6A02848F0810094E571 /* CoinbaseAccountAddressesResponse.swift in Sources */,
 				0F64E6A42848F3DD0094E571 /* CoinbaseAccountAddress.swift in Sources */,
+				0F92DB052861CC71003B10A0 /* fontStyle.swift in Sources */,
 				0FD67D7D2841C665003F89B1 /* GetUserCoinbaseAccounts.swift in Sources */,
 				0F64E6952847641D0094E571 /* CoinbaseBaseIDForCurrencyResponse.swift in Sources */,
+				0FF10A4C2860DCA40077563D /* GetUserCoinbaseToken.swift in Sources */,
 				0FD67D712841C112003F89B1 /* RestClientErrors.swift in Sources */,
 				0FC512D028464073008F01A3 /* CoinbaseAccountViewmodel.swift in Sources */,
 				0FD67D772841C515003F89B1 /* CoinbaseRepository.swift in Sources */,
@@ -560,6 +595,7 @@
 				0FC512D62846A6F8008F01A3 /* CoinbasePaymentMethodsResponse.swift in Sources */,
 				0F8DEE9C283D177200887509 /* ContentView.swift in Sources */,
 				0FD67D6F2841C0F4003F89B1 /* RestClient.swift in Sources */,
+				0F92DB0B2861D2C8003B10A0 /* NavigationConfigurator.swift in Sources */,
 				0F8DEE9A283D177200887509 /* CoinbaseApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
