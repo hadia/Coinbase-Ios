@@ -48,14 +48,14 @@ struct ContentView: View {
                         CoinbaseServiceItem(imageName: "transferCoinbase",title: "Transfer Dash",subTitle: "Between Dash Wallet and Coinbase.")
                     }
                     .padding(.vertical, 5)
-                    .background(.white)
+                    .background(Color.white.ignoresSafeArea())
                     .cornerRadius(10)
                   
                 
                 VStack(alignment: .center){
                     CoinbaseServiceItem(imageName: "logout",title: "Disconnect Coinbase Account")
                             .padding(.vertical, 5)
-                            .background(.white)
+                            .background(Color.white.ignoresSafeArea())
                             .cornerRadius(10)
                      }.onTapGesture(perform: {
                          viewModel.signOutTapped()
