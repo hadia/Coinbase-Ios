@@ -50,13 +50,21 @@ struct ContentView: View {
                     .padding(.vertical, 5)
                     .background(.white)
                     .cornerRadius(10)
+                  
+                
+                VStack(alignment: .center){
+                    CoinbaseServiceItem(imageName: "logout",title: "Disconnect Coinbase Account")
+                            .padding(.vertical, 5)
+                            .background(.white)
+                            .cornerRadius(10)
+                     }.onTapGesture(perform: {
+                         viewModel.signOutTapped()
+                     })
                     
                 }  .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .top)
                     .padding(.horizontal, 15)
-                    
-                   
-               
-            }.onAppear(perform: {
+            }
+.onAppear(perform: {
                 viewModel.signInTapped()
             })
             .navigationBarTitleDisplayMode(.inline)
@@ -77,6 +85,7 @@ struct ContentView: View {
                     }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
                 }
             }
+          
         }
     }
 }

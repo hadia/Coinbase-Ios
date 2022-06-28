@@ -31,6 +31,10 @@ class CoinbaseAccountViewmodel: NSObject,ObservableObject {
             })
             .store(in: &cancelables)
     }
+    func signOutTapped(){
+        getUserCoinbaseToken.signOut()
+        signInTapped()
+    }
     
     func signInTapped() {
         if (getUserCoinbaseToken.isUserLoginedIn()){

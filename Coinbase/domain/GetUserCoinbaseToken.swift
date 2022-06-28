@@ -26,4 +26,9 @@ class GetUserCoinbaseToken : NSObject, ObservableObject{
     func isUserLoginedIn()->Bool{
       return   ((NetworkRequest.accessToken?.isEmpty) == false)
     }
+    
+    func signOut(){
+        NetworkRequest.accessToken = ""
+        NetworkRequest.refreshToken = ""
+    }
 }

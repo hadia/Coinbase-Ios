@@ -19,6 +19,5 @@ class CoinbaseRepository {
     func getToken(code: String) -> AnyPublisher<CoinbaseToken, Error> {
         remoteService.getToken(code: code)
     }
-
 }
 

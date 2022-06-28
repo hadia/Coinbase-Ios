@@ -22,16 +22,12 @@ protocol CoinbaseService {
     func swapTradeCommitCoinbase(tradeId:String) -> AnyPublisher<CoinbasePaymentMethodsResponse, Error>
     func getCoinbaseAccountAddress(accountId:String) -> AnyPublisher<CoinbasePaymentMethodsResponse, Error>
     func getToken(code:String) -> AnyPublisher<CoinbaseToken, Error>
-
-   // func revokeToken() -> AnyPublisher<String, Error>
 }
 
 
 class CoinbaseServiceImpl: CoinbaseService {
-  
     
-  
-   @Injected private var restClient: RestClient
+  @Injected private var restClient: RestClient
     
     func getToken(code: String) -> AnyPublisher<CoinbaseToken, Error> {
         restClient.post(APIEndpoint.getToken, using:[
