@@ -116,6 +116,7 @@
 		0FD67D762841C515003F89B1 /* CoinbaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseRepository.swift; sourceTree = "<group>"; };
 		0FD67D792841C5DC003F89B1 /* AppModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModule.swift; sourceTree = "<group>"; };
 		0FD67D7C2841C665003F89B1 /* GetUserCoinbaseAccounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserCoinbaseAccounts.swift; sourceTree = "<group>"; };
+		47E71F72286AE0F600CDF2BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0FF10A472860C1020077563D /* CoinbaseToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseToken.swift; sourceTree = "<group>"; };
 		0FF10A492860C60C0077563D /* TokenNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenNetworkRequest.swift; sourceTree = "<group>"; };
 		0FF10A4B2860DCA40077563D /* GetUserCoinbaseToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserCoinbaseToken.swift; sourceTree = "<group>"; };
@@ -195,6 +196,7 @@
 		0F8DEE98283D177200887509 /* Coinbase */ = {
 			isa = PBXGroup;
 			children = (
+				47E71F72286AE0F600CDF2BD /* Info.plist */,
 				0F92DB0E2862029B003B10A0 /* MontserratMedium.ttf */,
 				0F92DB062861CDBF003B10A0 /* MontserratRegular.ttf */,
 				0F92DB072861CDBF003B10A0 /* MontserratSemiBold.ttf */,
@@ -754,20 +756,23 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Coinbase/Preview Content\"";
+				DEVELOPMENT_TEAM = 44RJ69WHFF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Coinbase/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Dash.Coinbase;
+				PRODUCT_BUNDLE_IDENTIFIER = org.dashfoundation.dash.playground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -784,20 +789,23 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Coinbase/Preview Content\"";
+				DEVELOPMENT_TEAM = 44RJ69WHFF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Coinbase/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Dash.Coinbase;
+				PRODUCT_BUNDLE_IDENTIFIER = org.dashfoundation.dash.playground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
