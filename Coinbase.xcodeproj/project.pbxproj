@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F4CA931286DE7380027CE74 /* BuyCoinbaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4CA930286DE7380027CE74 /* BuyCoinbaseView.swift */; };
 		0F64E6952847641D0094E571 /* CoinbaseBaseIDForCurrencyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F64E6942847641D0094E571 /* CoinbaseBaseIDForCurrencyResponse.swift */; };
 		0F64E69A2847652B0094E571 /* CoinbaseSwapeTradeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F64E6992847652B0094E571 /* CoinbaseSwapeTradeRequest.swift */; };
 		0F64E69D2847687B0094E571 /* CoinbaseSwapeTradeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F64E69C2847687B0094E571 /* CoinbaseSwapeTradeResponse.swift */; };
@@ -72,6 +73,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F4CA930286DE7380027CE74 /* BuyCoinbaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCoinbaseView.swift; sourceTree = "<group>"; };
+		0F59D2DE28711D5400F060D9 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		0F64E6942847641D0094E571 /* CoinbaseBaseIDForCurrencyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseBaseIDForCurrencyResponse.swift; sourceTree = "<group>"; };
 		0F64E6992847652B0094E571 /* CoinbaseSwapeTradeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseSwapeTradeRequest.swift; sourceTree = "<group>"; };
 		0F64E69C2847687B0094E571 /* CoinbaseSwapeTradeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseSwapeTradeResponse.swift; sourceTree = "<group>"; };
@@ -116,10 +119,10 @@
 		0FD67D762841C515003F89B1 /* CoinbaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseRepository.swift; sourceTree = "<group>"; };
 		0FD67D792841C5DC003F89B1 /* AppModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModule.swift; sourceTree = "<group>"; };
 		0FD67D7C2841C665003F89B1 /* GetUserCoinbaseAccounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserCoinbaseAccounts.swift; sourceTree = "<group>"; };
-		47E71F72286AE0F600CDF2BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0FF10A472860C1020077563D /* CoinbaseToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseToken.swift; sourceTree = "<group>"; };
 		0FF10A492860C60C0077563D /* TokenNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenNetworkRequest.swift; sourceTree = "<group>"; };
 		0FF10A4B2860DCA40077563D /* GetUserCoinbaseToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserCoinbaseToken.swift; sourceTree = "<group>"; };
+		47E71F72286AE0F600CDF2BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		ACC87752FDB7DB941D01224F /* Pods-Coinbase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coinbase.release.xcconfig"; path = "Target Support Files/Pods-Coinbase/Pods-Coinbase.release.xcconfig"; sourceTree = "<group>"; };
 		B8909FB672037DEDE2913F50 /* Pods-Coinbase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coinbase.debug.xcconfig"; path = "Target Support Files/Pods-Coinbase/Pods-Coinbase.debug.xcconfig"; sourceTree = "<group>"; };
 		FC4AE09CEDAD7863D62CE587 /* Pods_Coinbase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Coinbase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,6 +177,7 @@
 		0F8DEE8D283D177200887509 = {
 			isa = PBXGroup;
 			children = (
+				0F59D2DE28711D5400F060D9 /* Config.xcconfig */,
 				0F8DEE98283D177200887509 /* Coinbase */,
 				0F8DEEAE283D177500887509 /* CoinbaseTests */,
 				0F8DEEB8283D177500887509 /* CoinbaseUITests */,
@@ -214,6 +218,7 @@
 				0F8DEE9F283D177400887509 /* Preview Content */,
 				0F92DB0A2861D2C8003B10A0 /* NavigationConfigurator.swift */,
 				0F92DB0C2861F15D003B10A0 /* CoinbaseServiceItem.swift */,
+				0F4CA930286DE7380027CE74 /* BuyCoinbaseView.swift */,
 			);
 			path = Coinbase;
 			sourceTree = "<group>";
@@ -588,6 +593,7 @@
 				0FD67D7D2841C665003F89B1 /* GetUserCoinbaseAccounts.swift in Sources */,
 				0F64E6952847641D0094E571 /* CoinbaseBaseIDForCurrencyResponse.swift in Sources */,
 				0FF10A4C2860DCA40077563D /* GetUserCoinbaseToken.swift in Sources */,
+				0F4CA931286DE7380027CE74 /* BuyCoinbaseView.swift in Sources */,
 				0FD67D712841C112003F89B1 /* RestClientErrors.swift in Sources */,
 				0FC512D028464073008F01A3 /* CoinbaseAccountViewmodel.swift in Sources */,
 				0FD67D772841C515003F89B1 /* CoinbaseRepository.swift in Sources */,
@@ -635,6 +641,7 @@
 /* Begin XCBuildConfiguration section */
 		0F8DEEBD283D177500887509 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F59D2DE28711D5400F060D9 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -683,7 +690,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -695,6 +702,7 @@
 		};
 		0F8DEEBE283D177500887509 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F59D2DE28711D5400F060D9 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -737,7 +745,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -754,7 +762,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Coinbase/Preview Content\"";
 				DEVELOPMENT_TEAM = 44RJ69WHFF;
 				ENABLE_PREVIEWS = YES;
@@ -787,7 +795,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Coinbase/Preview Content\"";
 				DEVELOPMENT_TEAM = 44RJ69WHFF;
 				ENABLE_PREVIEWS = YES;

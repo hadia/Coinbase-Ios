@@ -27,23 +27,32 @@ protocol CoinbaseService {
 
 class CoinbaseServiceImpl: CoinbaseService {
     
-  @Injected private var restClient: RestClient
+    @Injected private var restClient: RestClient
     
     func getToken(code: String) -> AnyPublisher<CoinbaseToken, Error> {
-        restClient.post(APIEndpoint.getToken, using:[
-            URLQueryItem(name: "client_id", value: NetworkRequest.clientID),
-            URLQueryItem(name: "client_secret", value: NetworkRequest.clientSecret),
-            URLQueryItem(name: "grant_type", value: NetworkRequest.grant_type),
+        
+        var queryItems : [URLQueryItem] = [
             URLQueryItem(name: "redirect_uri", value: NetworkRequest.redirect_uri),
-            URLQueryItem(name: "code", value: code)
-          ])
+            URLQueryItem(name: "code", value: code),
+            URLQueryItem(name: "grant_type", value: NetworkRequest.grant_type)
+        ]
+        
+        if let  clientID = NetworkRequest.clientID as?String{
+            queryItems.append(   URLQueryItem(name: "client_id", value: clientID))
+        }
+        
+        if let  clientSecret = NetworkRequest.clientSecret as?String{
+            queryItems.append(   URLQueryItem(name: "client_secret", value:clientSecret))
+        }
+        
+        return restClient.post(APIEndpoint.getToken, using:queryItems)
     }
     
     
     func getUserCoinbaseAccounts(limit: Int) -> AnyPublisher<CoinbaseUserAccountsResponse, Error> {
         restClient.get(APIEndpoint.userAccounts(limit))
     }
-
+    
     
     func getCoinbaseUserAuthInformation() -> AnyPublisher<CoinbaseUserAuthInformation, Error> {
         restClient.get(APIEndpoint.userAuthInformation)
@@ -54,7 +63,7 @@ class CoinbaseServiceImpl: CoinbaseService {
     }
     
     func getCoinbaseActivePaymentMethods() -> AnyPublisher<CoinbasePaymentMethodsResponse, Error> {
-         restClient.get(APIEndpoint.activePaymentMethods)
+        restClient.get(APIEndpoint.activePaymentMethods)
     }
     
     func placeCoinbaseBuyOrder(accountId: String, request: CoinbasePlaceBuyOrderRequest) -> AnyPublisher<CoinbasePaymentMethodsResponse, Error> {
